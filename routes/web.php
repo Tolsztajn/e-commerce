@@ -13,3 +13,6 @@
 
 
 Route::get('/', 'HomeController@index');
+Route::get('/test', function(){
+  return "test";
+});

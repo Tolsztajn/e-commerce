@@ -25,4 +25,16 @@ class HomeController extends Controller
     {
         return view('home');
     }
+//creamos el metodo para la ruta
+    public function index() {
+      	$products = \App\Product::all();
+
+      	$variables = [
+      		"products" => $products,
+      	];
+
+      	return view('products.index', $variables);
+}
+
+
 }

@@ -24,3 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/productos', 'ProductsController@index');
 Route::get('/productos/{id}', 'ProductsController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

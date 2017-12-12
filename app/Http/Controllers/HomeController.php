@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('tuvistaquemementistequelahabiaspasado');
+        return view('index.blade.php');
     }
 
 

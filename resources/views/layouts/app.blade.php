@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,71 +15,73 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--link rel="stylesheet" href="../public/css/styles.css"-->
+    <link rel="stylesheet" href="/css/styles_viejos.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+  <div class="contenedor"> <!-- Contenedor principal -->
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+        <header> <!-- Encabezado logo + menu -->
+          <div class="first-nav">
+            <a href="?pagina=home"><img src="img/logo-1.svg" alt="logo wt" class="logo1"></a>
+            <img src="img/menu.svg" alt="" class="menu-button">
+            <nav class="second-nav">
+              <ul>
+                <li><a href="#">HABITACIONES</a></li>
+                <li><a href="#">DEPARTAMENTOS</a></li>
+                <li><a href="#">CASAS ENTERAS</a></li>
+                <li><a href="#">HOSTELS</a></li>
+              </ul>
+            </nav>
+            <nav class="login">
+              <ul>
+                <li><a href="?pagina=login">LOGIN</a></li>
+                <?php if (isset($_SESSION["usuario"])):?>
+                <li><a href="#">¡Bienvenido <?php echo $_SESSION["usuario"]; ?>!</a></li>
+              <?php endif?>
+              </ul>
+            </nav>
+          </div>
+        </header>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
+@yield('section')
+
+
+
+
+      <footer class="main-footer">
+        <nav class="nav-footer">
+          <ul>
+            <li><a href="?pagina=quines-somos">QUIENES SOMOS</a></li>
+            <li><a href="?pagina=preguntasFrecuentes">FAQ</a></li>
+            <li><a href="?pagina=contacto">CONTACTO</a></li>
+          </ul>
         </nav>
+      </footer>
 
-        @yield('content')
-    </div>
 
-    <!-- Scripts -->
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Scripts -->.
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    
 </body>
 </html>

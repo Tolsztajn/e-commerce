@@ -18,6 +18,8 @@ Route::get('/test', function(){
   return "test";
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,4 +28,6 @@ Route::get('/productos/{id}', 'ProductsController@show');
 
 
 
-Route::get('/', 'HomeController@pepe');
+Route::get('/a', 'HomeController@pepe');
+
+Route::get('/faq', 'HomeController@faq');

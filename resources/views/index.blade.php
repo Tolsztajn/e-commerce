@@ -33,7 +33,7 @@
               <div class="row">
                 <div class="col-lg-12">
       <?php
-                  if (!isset($_GET['pagina'])) {
+/*                  if (!isset($_GET['pagina'])) {
           header('Location: ?pagina=home');
           exit;
       }
@@ -45,9 +45,13 @@
                   }
 
 
+*/
 
-
-
+<ul>
+        @foreach ($products as $product)
+			<li><a href="/productos/{{$product->id}}">{{$product->name}}</a></li>
+		@endforeach
+    </ul>
 
       //            if($pepe == "preguntas"){
                       @yield('preguntas')

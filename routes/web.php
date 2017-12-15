@@ -28,6 +28,9 @@ Route::get('/productos/{id}', 'ProductsController@show');
 
 
 
-Route::get('/a', 'HomeController@pepe');
-
+Route::get('/nueva', 'HomeController@nueva');
 Route::get('/faq', 'HomeController@faq');
+Route::get('/index', 'HomeController@index');
+Route::get('/login', 'HomeController@login');
+Route::get('/register', 'HomeController@register');
+Route::get('/welcome', 'HomeController@welcome');

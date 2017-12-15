@@ -21,19 +21,33 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function home()
+    {
+        return view('home');
+    }
     public function index()
     {
         return view('index');
     }
+    public function login(){
+        return view('login');
+    }
 
-    public function pepe(){
+    public function nueva(){
       return view('nueva');
     }
 
     public function faq(){
         return view('faq');
     }
-
+    public function register(){
+        return view('register');
+    }
+    public function welcome(){
+        return view('welcome');
+    }
 
 
 }

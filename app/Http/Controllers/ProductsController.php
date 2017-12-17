@@ -15,4 +15,7 @@ $variables = [
 
 return view('products.index', $variables);
 }
+public function create() {
+	return view('products.create');
+}
 }

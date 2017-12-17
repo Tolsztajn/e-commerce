@@ -6,21 +6,13 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-  public function getPrice() {
-    return $this->cost + ($this->cost * $this->profit_margin / 100);
-  }
-  public function show($id) {
-  	$product = \App\Product::find($id);
+  public function index() {
+$products = \App\Product::all();
 
-  	$variables = [
-  		"product" => $product,
-  	];
+$variables = [
+  "products" => $products,
+];
 
-  	return view('products.show', $variables);
-  }
-  public function create() {
-	return view('products.create');
+return view('products.index', $variables);
 }
-
-
 }

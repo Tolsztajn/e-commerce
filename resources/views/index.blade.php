@@ -1,10 +1,14 @@
-
-
-
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+		<link rel="stylesheet" href="/css/app.css">
+    </head>
 
     <body>
-
+      <?php
+     /*
       <div class="contenedor"> <!-- Contenedor principal -->
             <header> <!-- Encabezado logo + menu -->
               <div class="first-nav">
@@ -32,7 +36,7 @@
             <div class="contenedor">
               <div class="row">
                 <div class="col-lg-12">
-      <?php
+  */    <?php
 /*                  if (!isset($_GET['pagina'])) {
           header('Location: ?pagina=home');
           exit;
@@ -51,8 +55,9 @@
         @foreach ($products as $product)
 			<li><a href="/productos/{{$product->id}}">{{$product->name}}</a></li>
 		@endforeach
-    </ul>
 
+  </ul>
+/*
       //            if($pepe == "preguntas"){
                       @yield('preguntas')
                   }
@@ -76,7 +81,7 @@
             </nav>
           </footer>
       </div>
-
+*/
     </body>
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
